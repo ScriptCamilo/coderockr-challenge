@@ -13,10 +13,11 @@ export const {
   ...defaultThemeMap,
   theme: {
     colors: {
-
+      black: '#2D2D2D',
     }
   },
   media: {
-    bp1: '(min-width: 640px)',
+    bp1: '(min-width: 480px)',
+    bp2: '(min-width: 768px)',
   },
 });
