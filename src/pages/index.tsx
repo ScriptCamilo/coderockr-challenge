@@ -1,34 +1,22 @@
-import { GetServerSideProps } from 'next';
+import type { GetServerSideProps } from 'next';
+import Link from 'next/link';
 
 import Wrapper from '../components/Wrapper';
 import { httpClient } from '../services/httpClient';
-
-interface PostProps {
-  id: number;
-  author: {
-    name: string;
-    mail: string;
-  };
-  title: string;
-  content: string;
-  image: string;
-  createdAt: string;
-};
-
-interface HomeProps {
-  posts: PostProps[];
-}
+import { HomeProps } from '../types/custom';
 
 export default function Home({ posts }: HomeProps) {
 
   return (
     <Wrapper>
       <main>
-        {posts?.map((post) => (
+        {posts.map((post) => (
           <section key={post.id}>
-            <h1>
-              {post.title}
-            </h1>
+            <Link href={`/posts/${post.id}`}>
+              <h1>
+                {post.title}
+              </h1>
+            </Link>
           </section>
         ))}
       </main>
@@ -36,8 +24,8 @@ export default function Home({ posts }: HomeProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { httpClient: apiClient } = httpClient(ctx);
+export const getServerSideProps: GetServerSideProps = async (_ctx) => {
+  const { apiClient } = httpClient();
   const { data } = await apiClient.get('/posts');
 
   return {

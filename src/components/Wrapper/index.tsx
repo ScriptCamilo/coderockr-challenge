@@ -4,11 +4,12 @@ import { Container } from './style';
 
 interface WrapperProps {
   children: ReactNode
+  style?: 'post'
 }
 
-export default function Wrapper({ children }: WrapperProps) {
+export default function Wrapper({ children, ...props}: WrapperProps) {
   return (
-    <Container>
+    <Container {...props}>
       <header>
         <h1>Rockr Blog</h1>
 

@@ -4,8 +4,9 @@ export const globalStyles = globalCss({
   'html, body': {
     padding: 0,
     margin: 0,
-    fontSize: '50%',
-    color: 'White',
+    fontSize: '37.5%',
+    height: '100%',
+    color: '$black',
     fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
   },
 
@@ -31,9 +32,17 @@ export const globalStyles = globalCss({
     fontWeight: 500,
   },
 
+  p: {
+    fontSize: '2.4rem',
+  },
+
+  '#__next': {
+    height: '100%',
+  },
+
   '@bp1': {
     html: {
-      fontSize: '56.25%',
+      fontSize: '50%',
     },
   },
 
