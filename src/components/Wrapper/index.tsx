@@ -1,5 +1,7 @@
+import Link from 'next/link';
 import { ReactNode } from 'react';
 
+import Contact from '../Contact';
 import { Container } from './style';
 
 interface WrapperProps {
@@ -14,8 +16,10 @@ export default function Wrapper({ children, ...props}: WrapperProps) {
         <h1>Rockr Blog</h1>
 
         <nav>
-          <h2>Posts</h2>
-          <h2>Contact</h2>
+          <Link href="/">Posts</Link>
+          <Contact>
+            <Link href='#contact'>Contact</Link>
+          </Contact>
         </nav>
       </header>
 

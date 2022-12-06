@@ -43,7 +43,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { id } = ctx.params as ParamsProps;
   const { apiClient } = httpClient();
-  console.log(ctx.params);
 
   try {
     const { data } = await apiClient(`posts/${id}`);

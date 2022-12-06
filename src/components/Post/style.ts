@@ -18,6 +18,7 @@ export const Header = styled('header', {
     margin: 0,
     height: '37rem',
     position: 'relative',
+    boxShadow: 'rgba(0, 0, 0, 0.45) 0px 2px 10px 0px',
   },
 });
 

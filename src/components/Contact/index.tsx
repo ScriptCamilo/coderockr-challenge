@@ -1,5 +1,9 @@
 import * as Dialog from '@radix-ui/react-dialog';
-import { FormEvent, ReactNode } from 'react';
+import { ReactNode } from 'react';
+import CloseIcon from '../../assets/icons/CloseIcon';
+import SendIcon from '../../assets/icons/SendIcon';
+
+import { CloseButton, content, Form, overlay, SubmitButton } from './style';
 
 interface ContactProps {
   children: ReactNode
@@ -7,23 +11,19 @@ interface ContactProps {
 
 export default function Contact({ children }: ContactProps) {
 
-  const handleContact = async (event: FormEvent) => {
-    event.preventDefault();
-  };
-
   return (
     <Dialog.Root>
-      <Dialog.Trigger>{children}</Dialog.Trigger>
+      <Dialog.Trigger asChild>{children}</Dialog.Trigger>
 
       <Dialog.Portal>
-        <Dialog.Overlay/>
-        <Dialog.Content>
+        <Dialog.Overlay className={overlay()} />
+        <Dialog.Content className={content()}>
           <Dialog.Close asChild>
-            <button
+            <CloseButton
               aria-label="Close"
             >
-              Fechar
-            </button>
+              <CloseIcon />
+            </CloseButton>
           </Dialog.Close>
 
           <Dialog.Title asChild>
@@ -32,21 +32,40 @@ export default function Contact({ children }: ContactProps) {
             </h1>
           </Dialog.Title>
 
-          <form
-            onSubmit={handleContact}
-          >
-            <label htmlFor="" className="">
-              <input type="text" name="" id="" />
+          <Form>
+            <label htmlFor="name">
+              Name
+              <input required type="text" name="name" id="name" placeholder="Fill your full name" />
             </label>
 
-            <label htmlFor="">
-              <input type="text" name="" id="" />
+            <label htmlFor="email">
+              E-mail
+              <input required type="email" name="email" id="email" placeholder="Fill a valid e-mail" />
             </label>
 
-            <button disabled type="submit">
+            <label htmlFor="phone">
+              Phone
+              <input
+                required
+                pattern="([0-9]{2}) [0-9]{1} [0-9]{4}-[0-9]{4}"
+                maxLength={16}
+                type="tel"
+                name="phone"
+                id="phone"
+                placeholder="XX X XXXX-XXXX"
+              />
+            </label>
+
+            <label htmlFor="post">
+              Post
+              <textarea required name="post" id="post" placeholder="Hello..." />
+            </label>
+
+            <SubmitButton type="submit">
+              <SendIcon />
               Submit
-            </button>
-          </form>
+            </SubmitButton>
+          </Form>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

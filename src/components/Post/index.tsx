@@ -18,7 +18,7 @@ export default function Post({ post }: BlogPostProps) {
     <Container>
       <Header>
         <figure>
-          <Image src={post.image} alt="Post image" fill/>
+          <Image src={post.image} alt="Post image" fill />
         </figure>
 
         <Description>

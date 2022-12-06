@@ -3,8 +3,8 @@ import { styled } from '../../../stitches.config';
 export const Container = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  background: 'linear-gradient(90deg, #F1A10A 0%, #342303 100%)',
-  height: '100%',
+  background: '$yellowLinearGradient',
+  minHeight: '100vh',
 
   '& > header': {
     display: 'flex',
@@ -12,13 +12,30 @@ export const Container = styled('div', {
     alignItems: 'center',
     background: '$black',
     color: 'White',
+    padding: '2rem 0',
     // TODO: Implement in header
     // marginBottom: '6rem',
+
+    h1: {
+      color: 'White',
+    },
 
     nav: {
       display: 'flex',
       justifyContent: 'space-evenly',
       width: '100%',
+
+      a: {
+        fontSize: '3.2rem',
+        fontWeight: 500,
+        padding: '0.5rem 1rem',
+        borderRadius: '0.8rem',
+        transition: '0.2s',
+
+        '&:hover': {
+          opacity: '0.6',
+        }
+      }
     },
   },
 

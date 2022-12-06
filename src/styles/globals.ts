@@ -5,13 +5,16 @@ export const globalStyles = globalCss({
     padding: 0,
     margin: 0,
     fontSize: '37.5%',
-    height: '100%',
     color: '$black',
     fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
   },
 
   '*': {
     boxSizing: 'border-box',
+  },
+
+  'button, input, textarea': {
+    all: 'unset',
   },
 
   a: {
@@ -25,6 +28,7 @@ export const globalStyles = globalCss({
 
   h1: {
     fontSize: '3.6rem',
+    color: '$yellow',
   },
 
   h2: {
@@ -34,10 +38,6 @@ export const globalStyles = globalCss({
 
   p: {
     fontSize: '2.4rem',
-  },
-
-  '#__next': {
-    height: '100%',
   },
 
   '@bp1': {
