@@ -1,5 +1,6 @@
 import type { GetServerSideProps } from 'next';
 import Link from 'next/link';
+import Post from '../components/Post';
 
 import Wrapper from '../components/Wrapper';
 import { httpClient } from '../services/httpClient';
@@ -9,17 +10,13 @@ export default function Home({ posts }: HomeProps) {
 
   return (
     <Wrapper>
-      <main>
-        {posts.map((post) => (
+        {posts.map((post, index) => (
           <section key={post.id}>
             <Link href={`/posts/${post.id}`}>
-              <h1>
-                {post.title}
-              </h1>
+              <Post post={post} style="asSection" count={index + 1} />
             </Link>
           </section>
         ))}
-      </main>
     </Wrapper>
   );
 }

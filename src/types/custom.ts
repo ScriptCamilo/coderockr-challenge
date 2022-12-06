@@ -16,4 +16,6 @@ export interface HomeProps {
 
 export interface BlogPostProps {
   post: PostProps;
+  style?: 'asSection';
+  count: number;
 };

@@ -16,6 +16,8 @@ export const {
       black: '#2D2D2D',
       yellow: '#F1A10A',
       yellowLinearGradient: 'linear-gradient(90deg, #F1A10A 0%, #342303 100%)',
+      darkBlue: '#032937',
+      lightGray: '#EAEDED',
     }
   },
   media: {

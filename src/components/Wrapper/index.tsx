@@ -23,7 +23,9 @@ export default function Wrapper({ children, ...props}: WrapperProps) {
         </nav>
       </header>
 
-      {children}
+      <main>
+        {children}
+      </main>
 
       <footer></footer>
     </Container>

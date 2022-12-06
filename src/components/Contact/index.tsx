@@ -1,7 +1,7 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { ReactNode } from 'react';
-import CloseIcon from '../../assets/icons/CloseIcon';
-import SendIcon from '../../assets/icons/SendIcon';
+import Close from '../../assets/icons/Close';
+import Send from '../../assets/icons/Send';
 
 import { CloseButton, content, Form, overlay, SubmitButton } from './style';
 
@@ -22,7 +22,7 @@ export default function Contact({ children }: ContactProps) {
             <CloseButton
               aria-label="Close"
             >
-              <CloseIcon />
+              <Close />
             </CloseButton>
           </Dialog.Close>
 
@@ -62,7 +62,7 @@ export default function Contact({ children }: ContactProps) {
             </label>
 
             <SubmitButton type="submit">
-              <SendIcon />
+              <Send />
               Submit
             </SubmitButton>
           </Form>

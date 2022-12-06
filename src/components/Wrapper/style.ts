@@ -33,7 +33,8 @@ export const Container = styled('div', {
         transition: '0.2s',
 
         '&:hover': {
-          opacity: '0.6',
+          background: '#00000040',
+          opacity: '0.8',
         }
       }
     },
@@ -43,6 +44,10 @@ export const Container = styled('div', {
     style: {
       post: {
         background: 'White',
+
+        '@bp2': {
+          background: '$yellowLinearGradient',
+        }
       }
     }
   }

@@ -1,11 +1,12 @@
 import Image from 'next/image';
 
 import { BlogPostProps } from '../../types/custom';
-import { Container, Content, Description, Header } from './style';
+import { Container, Content, Figure, Header, Main } from './style';
 
 
-export default function Post({ post }: BlogPostProps) {
+export default function Post({ post, style, count }: BlogPostProps) {
   const [dateValidFormat] = post.createdAt.split('Z');
+  const isPostCountEven = count % 2 === 0 ? 'even' : undefined;
   const date = new Date(dateValidFormat);
   const options = {
     month: 'short',
@@ -15,26 +16,26 @@ export default function Post({ post }: BlogPostProps) {
   const dateFormat = new Intl.DateTimeFormat('en-US', options).format(date);
 
   return (
-    <Container>
-      <Header>
-        <figure>
-          <Image src={post.image} alt="Post image" fill />
-        </figure>
+    <Container style={style} side={isPostCountEven} >
+      <Figure style={style}>
+        <Image src={post.image} alt="Post image" fill />
+      </Figure>
 
-        <Description>
+      <Main style={style}>
+        <Header style={style}>
           <h1>{post.title}</h1>
 
           <p>{post.author.name}</p>
 
           <small>{dateFormat}</small>
-        </Description>
-      </Header>
+        </Header>
 
-      <hr />
+        <hr />
 
-      <Content>
-        <p>{post.content}</p>
-      </Content>
+        <Content style={style}>
+          <p>{post.content}</p>
+        </Content>
+      </Main>
     </Container>
   );
 }
