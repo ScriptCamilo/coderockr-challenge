@@ -18,7 +18,7 @@ export default function Post({ post, style, count }: BlogPostProps) {
   return (
     <Container style={style} side={isPostCountEven} >
       <Figure style={style}>
-        <Image src={post.image} alt="Post image" fill />
+        <Image src={post.image} alt="Post image" height={640} width={640}/>
       </Figure>
 
       <Main style={style}>

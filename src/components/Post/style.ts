@@ -39,8 +39,13 @@ export const Container = styled('article', {
 export const Figure = styled('figure', {
   margin: 0,
   height: '37rem',
-  position: 'relative',
   boxShadow: 'rgba(0, 0, 0, 0.45) 0px 2px 10px 0px',
+
+  img: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'fill',
+  },
 
   variants: {
     style: {
@@ -49,6 +54,10 @@ export const Figure = styled('figure', {
         width: '28.4rem',
         height: '28.4rem',
         boxShadow: 'unset',
+
+        img: {
+          objectFit: 'cover',
+        },
       }
     },
   },

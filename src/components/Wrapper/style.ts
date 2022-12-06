@@ -13,8 +13,6 @@ export const Container = styled('div', {
     background: '$black',
     color: 'White',
     padding: '2rem 0',
-    // TODO: Implement in header
-    // marginBottom: '6rem',
 
     h1: {
       color: 'White',
@@ -38,6 +36,30 @@ export const Container = styled('div', {
         }
       }
     },
+  },
+
+  '@bp2': {
+    '& > header': {
+      padding: '2.8rem',
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+      alignItems: 'center',
+      position: 'fixed',
+      width: '100%',
+
+      h1: {
+        margin: 0,
+      },
+
+      nav: {
+        width: 'unset',
+        gap: '11.8rem',
+      },
+
+      '& + main': {
+        paddingTop: '16.9rem',
+      }
+    }
   },
 
   variants: {
