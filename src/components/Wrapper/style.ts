@@ -40,7 +40,7 @@ export const Container = styled('div', {
   },
 
   main: {
-    margin: 'auto',
+    margin: '0 auto',
   },
 
   '@bp2': {

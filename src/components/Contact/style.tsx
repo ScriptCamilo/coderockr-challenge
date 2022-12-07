@@ -16,7 +16,7 @@ export const content = css({
   left: '50%',
   transform: 'translate(-50%, -50%)',
   background: 'White',
-  maxWidth: '81rem',
+  maxWidth: '61rem',
   width: '80vw',
   padding: '4.2rem 6.2rem',
   borderRadius: '0.8rem',
@@ -28,8 +28,8 @@ export const CloseButton = styled('button', {
   alignItems: 'center',
   justifyContent: 'center',
   position: 'absolute',
-  top: '2rem',
-  right: '2rem',
+  top: '1rem',
+  right: '1rem',
   padding: '1.2rem',
   cursor: 'pointer',
   transition: '0.2s',
@@ -39,8 +39,8 @@ export const CloseButton = styled('button', {
   },
 
   '& svg': {
-    height: '2.8rem',
-    width: '2.8rem',
+    height: '2.4rem',
+    width: '2.4rem',
   }
 });
 
@@ -79,6 +79,8 @@ export const Form = styled('form', {
     '& textarea': {
       resize: 'none',
       height: '20rem',
+      whiteSpace: 'pre-wrap',
+      overflowWrap: 'break-word',
     },
   },
 

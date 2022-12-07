@@ -33,7 +33,12 @@ export const Container = styled('article', {
   variants: {
     style: {
       asSection: {
-        flexDirection: 'row',
+        display: 'grid',
+        gridTemplateColumns: '1fr 2fr',
+        gridTemplateAreas: `
+          'image header'
+          'image content'
+        `,
         background: 'White',
         height: '28.4rem',
 
@@ -49,7 +54,11 @@ export const Container = styled('article', {
 
     side: {
       even: {
-        flexDirection: 'row-reverse',
+        gridTemplateColumns: '2fr 1fr',
+        gridTemplateAreas: `
+          'header image'
+          'content image'
+        `,
         background: '$lightGray',
       },
     },
@@ -59,6 +68,7 @@ export const Container = styled('article', {
 export const Figure = styled('figure', {
   height: '37rem',
   boxShadow: 'rgba(0, 0, 0, 0.45) 0px 2px 10px 0px',
+  gridArea: 'image',
 
   img: {
     width: '100%',
@@ -67,7 +77,6 @@ export const Figure = styled('figure', {
   },
 
   '@bp2': {
-    gridArea: 'image',
     width: '64rem',
     height: '64rem',
     boxShadow: 'unset',
@@ -76,8 +85,8 @@ export const Figure = styled('figure', {
   variants: {
     style: {
       asSection: {
-        width: '28.4rem',
-        height: '28.4rem',
+        maxWidth: '28.4rem',
+        maxHeight: '28.4rem',
         boxShadow: 'unset',
 
         img: {
@@ -92,6 +101,7 @@ export const Header = styled('header', {
   display: 'flex',
   flexDirection: 'column',
   padding: '2rem 4.3rem',
+  gridArea: 'header',
 
   h1: {
     marginBottom: '3rem',
@@ -103,7 +113,6 @@ export const Header = styled('header', {
   },
 
   '@bp2': {
-    gridArea: 'header',
     flexDirection: 'column-reverse',
     maxWidth: 'unset',
     margin: 'auto',
@@ -123,11 +132,11 @@ export const Header = styled('header', {
       asSection: {
         display: 'flex',
         flexDirection: 'column-reverse',
-        padding: 0,
+        padding: '0 2rem',
         gap: '0.8rem',
-        maxWidth: '60%',
 
         h1: {
+          margin: 0,
           display: '-webkit-box',
           overflow: 'hidden',
           '-webkit-line-clamp': 2,
@@ -148,9 +157,9 @@ export const Header = styled('header', {
 
 export const Content = styled('section', {
   padding: '4rem 4.3rem',
+  gridArea: 'content',
 
   '@bp2': {
-    gridArea: 'content',
     maxWidth: '78rem',
   },
 
@@ -161,8 +170,7 @@ export const Content = styled('section', {
   variants: {
     style: {
       asSection: {
-        padding: 0,
-        maxWidth: '60%',
+        padding: '0 2rem',
 
         p: {
           display: '-webkit-box',
