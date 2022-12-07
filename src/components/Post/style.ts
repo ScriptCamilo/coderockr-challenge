@@ -9,10 +9,30 @@ export const Container = styled('article', {
     width: '95%',
   },
 
+  '@bp2': {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    justifyItems: 'center',
+    gridTemplateAreas: `
+    'image image'
+    'header header'
+    'content content'
+    `,
+    background: 'White',
+    margin: '1.6rem',
+    maxWidth: '128rem',
+  },
+
+  '@bp3': {
+    gridTemplateAreas: `
+    'image header'
+    'content content'
+    `,
+  },
+
   variants: {
     style: {
       asSection: {
-        display: 'flex',
         flexDirection: 'row',
         background: 'White',
         height: '28.4rem',
@@ -37,7 +57,6 @@ export const Container = styled('article', {
 });
 
 export const Figure = styled('figure', {
-  margin: 0,
   height: '37rem',
   boxShadow: 'rgba(0, 0, 0, 0.45) 0px 2px 10px 0px',
 
@@ -47,10 +66,16 @@ export const Figure = styled('figure', {
     objectFit: 'fill',
   },
 
+  '@bp2': {
+    gridArea: 'image',
+    width: '64rem',
+    height: '64rem',
+    boxShadow: 'unset',
+  },
+
   variants: {
     style: {
       asSection: {
-        margin: 0,
         width: '28.4rem',
         height: '28.4rem',
         boxShadow: 'unset',
@@ -63,18 +88,6 @@ export const Figure = styled('figure', {
   },
 });
 
-export const Main = styled('section', {
- variants: {
-  style: {
-    asSection: {
-      padding: '1rem 2.4rem',
-      gap: '0.4rem',
-      maxWidth: '60%',
-    },
-  }
- },
-});
-
 export const Header = styled('header', {
   display: 'flex',
   flexDirection: 'column',
@@ -84,13 +97,25 @@ export const Header = styled('header', {
     marginBottom: '3rem',
   },
 
-  p: {
-    margin: 0,
-  },
-
   small: {
     fontSize: '1.8rem',
     color: '$darkBlue',
+  },
+
+  '@bp2': {
+    gridArea: 'header',
+    flexDirection: 'column-reverse',
+    maxWidth: 'unset',
+    margin: 'auto',
+    gap: '3.2rem',
+
+    small: {
+      marginBottom: '1.2rem',
+    }
+  },
+
+  '@bp3': {
+    maxWidth: '50rem',
   },
 
   variants: {
@@ -100,9 +125,9 @@ export const Header = styled('header', {
         flexDirection: 'column-reverse',
         padding: 0,
         gap: '0.8rem',
+        maxWidth: '60%',
 
         h1: {
-          margin: 0,
           display: '-webkit-box',
           overflow: 'hidden',
           '-webkit-line-clamp': 2,
@@ -122,15 +147,24 @@ export const Header = styled('header', {
 });
 
 export const Content = styled('section', {
-  padding: '0 4.3rem',
+  padding: '4rem 4.3rem',
+
+  '@bp2': {
+    gridArea: 'content',
+    maxWidth: '78rem',
+  },
+
+  '@bp3': {
+    padding: '12.4rem 0 16.8rem',
+  },
 
   variants: {
     style: {
       asSection: {
         padding: 0,
+        maxWidth: '60%',
 
         p: {
-          margin: 0,
           display: '-webkit-box',
           overflow: 'hidden',
           '-webkit-line-clamp': 3,

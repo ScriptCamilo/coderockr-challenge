@@ -38,7 +38,13 @@ export const Container = styled('div', {
     },
   },
 
+  main: {
+    margin: 'auto',
+  },
+
   '@bp2': {
+    paddingBottom: '21.8rem',
+
     '& > header': {
       padding: '2.8rem',
       flexDirection: 'row',
@@ -46,10 +52,6 @@ export const Container = styled('div', {
       alignItems: 'center',
       position: 'fixed',
       width: '100%',
-
-      h1: {
-        margin: 0,
-      },
 
       nav: {
         width: 'unset',
@@ -69,6 +71,12 @@ export const Container = styled('div', {
 
         '@bp2': {
           background: '$yellowLinearGradient',
+
+          '& > header': {
+            '& + main': {
+              paddingTop: '20.9rem',
+            }
+          }
         }
       }
     }

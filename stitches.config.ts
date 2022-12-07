@@ -23,5 +23,6 @@ export const {
   media: {
     bp1: '(min-width: 480px)',
     bp2: '(min-width: 768px)',
+    bp3: '(min-width: 869px)',
   },
 });

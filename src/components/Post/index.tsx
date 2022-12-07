@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { BlogPostProps } from '../../types/custom';
-import { Container, Content, Figure, Header, Main } from './style';
+import { Container, Content, Figure, Header } from './style';
 
 
 export default function Post({ post, style, count }: BlogPostProps) {
@@ -21,21 +21,19 @@ export default function Post({ post, style, count }: BlogPostProps) {
         <Image src={post.image} alt="Post image" height={640} width={640}/>
       </Figure>
 
-      <Main style={style}>
-        <Header style={style}>
-          <h1>{post.title}</h1>
+      <Header style={style}>
+        <h1>{post.title}</h1>
 
-          <p>{post.author.name}</p>
+        <p>{post.author.name}</p>
 
-          <small>{dateFormat}</small>
-        </Header>
+        <small>{dateFormat}</small>
+      </Header>
 
-        <hr />
+      <hr />
 
-        <Content style={style}>
-          <p>{post.content}</p>
-        </Content>
-      </Main>
+      <Content style={style}>
+        <p>{post.content}</p>
+      </Content>
     </Container>
   );
 }

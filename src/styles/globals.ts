@@ -1,16 +1,16 @@
 import { globalCss } from '../../stitches.config';
 
 export const globalStyles = globalCss({
-  'html, body': {
-    padding: 0,
+  '*': {
+    boxSizing: 'border-box',
     margin: 0,
+    padding: 0,
+  },
+
+  'html, body': {
     fontSize: '37.5%',
     color: '$black',
     fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
-  },
-
-  '*': {
-    boxSizing: 'border-box',
   },
 
   'button, input, textarea': {
@@ -20,10 +20,6 @@ export const globalStyles = globalCss({
   a: {
     color: 'inherit',
     textDecoration: 'none',
-  },
-
-  'h1, h2': {
-    marginTop: 0,
   },
 
   h1: {
