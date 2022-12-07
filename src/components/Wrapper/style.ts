@@ -22,6 +22,7 @@ export const Container = styled('div', {
       display: 'flex',
       justifyContent: 'space-evenly',
       width: '100%',
+      marginTop: '2.4rem',
 
       a: {
         fontSize: '3.2rem',
@@ -56,6 +57,7 @@ export const Container = styled('div', {
       nav: {
         width: 'unset',
         gap: '11.8rem',
+        margin: 0,
       },
 
       '& + main': {

@@ -64,6 +64,7 @@ export const Form = styled('form', {
       padding: '1.6rem 1.8rem 1.8rem 1.6rem',
       border: '0.1rem solid $black',
       borderRadius: '0.4rem',
+      cursor: 'text',
 
       '&::placeholder': {
         color: 'rgba(0, 0, 0, 0.51)'
@@ -79,7 +80,21 @@ export const Form = styled('form', {
       resize: 'none',
       height: '20rem',
     },
-  }
+  },
+
+  '@bp2': {
+    gap: '2.8rem',
+
+    '& label': {
+      '& input, & textarea': {
+        padding: '1.2rem 1.6rem 1.6rem 1.2rem',
+      },
+
+      '& textarea': {
+        height: '20rem',
+      },
+    },
+  },
 });
 
 export const SubmitButton = styled('button', {
