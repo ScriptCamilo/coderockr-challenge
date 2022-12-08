@@ -5,13 +5,17 @@
 
 * [React](https://reactjs.org)
 * [Next.js](https://nextjs.org)
-    * Used for Server-Side Rendering
+  * Used for Server-Side Rendering
 * [Stitches](https://stitches.dev)
-    * Used to create CSS-in-JS with custom components
+  * Used to create CSS-in-JS with custom components
 * [Radix Dialog](https://www.radix-ui.com/docs/primitives/components/dialog)
-    * Used to create the contact dialog/page
+  * Used to create the contact dialog/page
 * [Axios](https://axios-http.com)
-    * Used to make API calls
+  * Used to make API calls
+
+## Demo
+
+[Vercel App](https://coderockr-challenge-scriptcamilo.vercel.app)
 
 ## Run Locally
 
