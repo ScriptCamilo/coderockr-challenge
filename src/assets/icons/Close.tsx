@@ -1,8 +1,8 @@
 import { SVGAttributes } from 'react';
 
-interface CloseIconProps extends SVGAttributes<HTMLOrSVGElement> {}
+interface CloseProps extends SVGAttributes<HTMLOrSVGElement> {}
 
-export default function CloseIcon(props: CloseIconProps) {
+export default function Close(props: CloseProps) {
   return (
     <svg
       width={28}

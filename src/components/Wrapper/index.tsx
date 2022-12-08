@@ -13,7 +13,7 @@ export default function Wrapper({ children, ...props}: WrapperProps) {
   return (
     <Container {...props}>
       <header>
-        <h1>Rockr Blog</h1>
+        <Link href="/"><h1>Rockr Blog</h1></Link>
 
         <nav>
           <Link href="/">Posts</Link>

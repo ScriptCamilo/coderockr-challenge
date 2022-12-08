@@ -1,8 +1,9 @@
-import { styled } from '../../../stitches.config';
+import { css, styled } from '../../../stitches.config';
 
 export const Container = styled('article', {
   display: 'flex',
   flexDirection: 'column',
+  position: 'relative',
 
   hr: {
     borderTop: 'solid 0',
@@ -14,19 +15,23 @@ export const Container = styled('article', {
     gridTemplateColumns: '1fr 1fr',
     justifyItems: 'center',
     gridTemplateAreas: `
-    'image image'
-    'header header'
-    'content content'
+      'image image'
+      'header header'
+      'content content'
     `,
     background: 'White',
     margin: '1.6rem',
     maxWidth: '128rem',
+
+    '& svg': {
+      display: 'none',
+    },
   },
 
   '@bp3': {
     gridTemplateAreas: `
-    'image header'
-    'content content'
+      'image header'
+      'content content'
     `,
   },
 
@@ -41,6 +46,9 @@ export const Container = styled('article', {
         `,
         background: 'White',
         height: '28.4rem',
+        margin: 0,
+        justifyItems: 'unset',
+        transition: '0.2s',
 
         hr: {
           display: 'none',
@@ -48,6 +56,21 @@ export const Container = styled('article', {
 
         '&:hover': {
           opacity: '0.8',
+        },
+
+        '@bp2': {
+          maxWidth: 'unset',
+          height: '32rem',
+          gridColumnGap: '8rem',
+
+          '& svg': {
+            display: 'block',
+          },
+
+          '&:hover': {
+            opacity: 'unset',
+            background:'$lightGray',
+          },
         },
       }
     },
@@ -60,6 +83,15 @@ export const Container = styled('article', {
           'content image'
         `,
         background: '$lightGray',
+
+        '@bp2': {
+          gridTemplateColumns: '1fr 2fr',
+          gridTemplateAreas: `
+            'image header'
+            'image content'
+          `,
+          background: 'White',
+        },
       },
     },
   },
@@ -91,6 +123,13 @@ export const Figure = styled('figure', {
 
         img: {
           objectFit: 'cover',
+        },
+
+        '@bp2': {
+          maxHeight: 'unset',
+          maxWidth: 'unset',
+          height: '32rem',
+          width: '32rem',
         },
       }
     },
@@ -150,6 +189,13 @@ export const Header = styled('header', {
         small: {
           display: 'none',
         },
+
+        '@bp2': {
+          padding: 0,
+          margin: '1rem 0',
+          width: '100%',
+          maxWidth: '44rem',
+        },
       },
     },
   },
@@ -177,8 +223,27 @@ export const Content = styled('section', {
           overflow: 'hidden',
           '-webkit-line-clamp': 3,
           '-webkit-box-orient': 'vertical',
-        }
+        },
+
+        '@bp2': {
+          padding: 0,
+          maxWidth: '44rem',
+        },
       },
     },
+  },
+});
+
+export const readMoreIcon = css({
+  display: 'none',
+
+  '@bp2': {
+    position: 'absolute',
+    marginRight: '4rem',
+    marginBottom: '1.2rem',
+    bottom: 0,
+    right: 0,
+    height: '2.4rem',
+    width: '2.4rem',
   },
 });

@@ -2,6 +2,7 @@ import { css, styled } from '../../../stitches.config';
 
 export const overlay = css({
   position: 'fixed',
+  zIndex: 3,
   inset: 0,
   backgroundColor: '#00000060'
 });
@@ -20,6 +21,7 @@ export const content = css({
   width: '80vw',
   padding: '4.2rem 6.2rem',
   borderRadius: '0.8rem',
+  zIndex: 3,
 });
 
 export const CloseButton = styled('button', {

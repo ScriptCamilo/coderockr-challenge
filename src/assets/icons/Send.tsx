@@ -1,8 +1,8 @@
 import { SVGAttributes } from 'react';
 
-interface SendIconProps extends SVGAttributes<HTMLOrSVGElement> {}
+interface SendProps extends SVGAttributes<HTMLOrSVGElement> {}
 
-export default function SendIcon(props: SendIconProps) {
+export default function Send(props: SendProps) {
   return (
     <svg
       width={24}

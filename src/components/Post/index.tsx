@@ -1,7 +1,8 @@
 import Image from 'next/image';
+import ReadMore from '../../assets/icons/ReadMore';
 
 import { BlogPostProps } from '../../types/custom';
-import { Container, Content, Figure, Header } from './style';
+import { Container, Content, Figure, Header, readMoreIcon } from './style';
 
 
 export default function Post({ post, style, count }: BlogPostProps) {
@@ -34,6 +35,8 @@ export default function Post({ post, style, count }: BlogPostProps) {
       <Content style={style}>
         <p>{post.content}</p>
       </Content>
+
+      <ReadMore className={readMoreIcon()} />
     </Container>
   );
 }

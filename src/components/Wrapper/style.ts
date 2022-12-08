@@ -52,7 +52,11 @@ export const Container = styled('div', {
       justifyContent: 'space-around',
       alignItems: 'center',
       position: 'fixed',
+      left: 0,
+      right: 0,
+      top: 0,
       width: '100%',
+      zIndex: 2,
 
       nav: {
         width: 'unset',
@@ -62,8 +66,49 @@ export const Container = styled('div', {
 
       '& + main': {
         paddingTop: '16.9rem',
-      }
-    }
+      },
+    },
+
+    main: {
+      display: 'grid',
+      gridTemplateColumns: 'auto auto auto auto',
+      rowGap: '8rem',
+      margin: 0,
+
+      '& > section:nth-child(3n + 1)': {
+        gridColumnStart: 1,
+        gridColumnEnd: 3,
+      },
+
+      '& > section:nth-child(3n + 2)': {
+        gridColumnStart: 3,
+        gridColumnEnd: 5,
+      },
+
+      '& > section:nth-child(3n + 3)': {
+        height: '64rem',
+        gridColumnStart: 2,
+        gridColumnEnd: 5,
+
+        '& figure': {
+          maxWidth: '640rem',
+          maxHeight: '64rem',
+          height: '100%',
+          width: '100%',
+        },
+
+        '&:nth-child(even)': {
+          gridColumnStart: 1,
+          gridColumnEnd: 4,
+        },
+
+        '& article': {
+          gridTemplateColumns: '1fr 1fr',
+          justifyItems: 'center',
+          height: '100%',
+        },
+      },
+    },
   },
 
   variants: {
@@ -77,10 +122,15 @@ export const Container = styled('div', {
           '& > header': {
             '& + main': {
               paddingTop: '20.9rem',
-            }
-          }
-        }
-      }
-    }
-  }
+            },
+          },
+
+          main: {
+            all: 'unset',
+            margin: '0 auto',
+          },
+        },
+      },
+    },
+  },
 });
