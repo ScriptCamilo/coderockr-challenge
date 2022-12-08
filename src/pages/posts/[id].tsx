@@ -1,7 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import { useRouter } from 'next/router';
 import { ParsedUrlQuery } from 'querystring';
-import Post from '../../components/Post';
 
+import Post from '../../components/Post';
 import Wrapper from '../../components/Wrapper';
 import { httpClient } from '../../services/httpClient';
 import { BlogPostProps, PostProps } from '../../types/custom';
@@ -11,9 +12,11 @@ interface ParamsProps extends ParsedUrlQuery {
 }
 
 export default function BlogPost({ post }: BlogPostProps) {
+  const { isFallback } = useRouter();
+
   return (
     <Wrapper style="post">
-      <Post post={post} />
+      {isFallback ? <h1>Carregando...</h1> : <Post post={post} />}
     </Wrapper>
   );
 }
@@ -23,7 +26,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const { apiClient } = httpClient();
     const { data } = await apiClient.get<PostProps[]>('/posts');
 
-    const paths = data.map(post => {
+    const paths = data.slice(0, 10).map(post => {
       return { params: { id: String(post.id) } };
     });
 
@@ -45,7 +48,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   const { apiClient } = httpClient();
 
   try {
-    const { data } = await apiClient(`posts/${id}`);
+    const { data } = await apiClient<PostProps>(`posts/${id}`);
 
     return {
       props: {

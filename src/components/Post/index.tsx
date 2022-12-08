@@ -7,7 +7,7 @@ import { Container, Content, Figure, Header, readMoreIcon } from './style';
 
 export default function Post({ post, style, count }: BlogPostProps) {
   const [dateValidFormat] = post.createdAt.split('Z');
-  const isPostCountEven = count % 2 === 0 ? 'even' : undefined;
+  const isPostCountEven = Number(count) % 2 === 0 ? 'even' : undefined;
   const date = new Date(dateValidFormat);
   const options = {
     month: 'short',
