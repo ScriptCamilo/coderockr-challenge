@@ -1,4 +1,3 @@
-
 # Coderockr Challenge
 
 ## Tech Stack
@@ -51,5 +50,4 @@ You can run the production server as well running
 
 ## Authors
 
-- [Rodrigo Camilo](https://www.github.com/ScriptCamilo)
-
+* [Rodrigo Camilo](https://www.github.com/ScriptCamilo)
